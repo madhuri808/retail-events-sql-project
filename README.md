@@ -36,7 +36,8 @@ Provide a list of products with a base price greater than 500 that are featured 
 Joined `fact_events` and `dim_products` tables using `product_code` and filtered records where `base_price > 500` and `promo_type = 'BOGOF'`.
 
 **SQL Query:**  
-See all_queries.sql
+[View all SQL queries](all_queries.sql)
+
 
 **Output:**  
 ![High Value BOGOF Products](outputs/Q1)Answer.jpeg)
