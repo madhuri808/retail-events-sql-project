@@ -36,11 +36,12 @@ Provide a list of products with a base price greater than 500 that are featured 
 Joined `fact_events` and `dim_products` tables using `product_code` and filtered records where `base_price > 500` and `promo_type = 'BOGOF'`.
 
 **SQL Query:**  
-See `All Queries`
+See `all_queries.sql`
 
 **Output:**  
 ![High Value BOGOF Products](outputs/Q1)Answer.jpeg)
-
+  
 **Insight:**  
-Several high-priced products are being offered under BOGOF promotions, indicating an aggressive discounting strategy on premium items during festive campaigns.
+Only two premium products with base prices above ₹1000 are currently included in BOGOF promotions. This suggests that the BOGOF strategy is selectively applied to high-value household items, likely to drive higher sales volumes for expensive products during festive periods.
+
 
