@@ -45,4 +45,22 @@ Joined `fact_events` and `dim_products` tables using `product_code` and filtered
 **Insight:**  
 Only two premium products with base prices above ₹1000 are currently included in BOGOF promotions. This suggests that the BOGOF strategy is selectively applied to high-value household items, likely to drive higher sales volumes for expensive products during festive periods.
 
+### 2. Store Distribution by City
+
+**Business Question:**  
+Generate a report showing the number of stores in each city, sorted by store count in descending order.
+
+**SQL Logic Used:**  
+Aggregated store data from `dim_stores` by grouping records at the city level and counting the number of stores per city.
+
+**SQL Query:**  
+[View SQL queries](all_queries.sql)
+
+**Output:**  
+![Store Count by City](outputs/Q2)Answer.jpeg)
+
+**Insight:**  
+Bengaluru has the highest store presence with 10 stores, followed by Chennai (8) and Hyderabad (7), indicating a strong focus on major metro markets. In contrast, tier-2 cities such as Trivandrum and Vijayawada have relatively lower store counts, suggesting potential opportunities for targeted expansion in these regions.
+
+
 
