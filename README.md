@@ -1,4 +1,4 @@
-# retail-events-sql-project
+# Retail-events-sql-project
 
 Domain: FMCG Function: Sales / Promotions
 
