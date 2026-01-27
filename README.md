@@ -57,7 +57,7 @@ Aggregated store data from `dim_stores` by grouping records at the city level an
 [View SQL queries](all_queries.sql)
 
 **Output:**  
-![Store Count by City](outputs/Q2)Answer.jpeg)
+![Store Count by City](outputs/Q1)Answer.jpeg))
 
 **Insight:**  
 Bengaluru has the highest store presence with 10 stores, followed by Chennai (8) and Hyderabad (7), indicating a strong focus on major metro markets. In contrast, tier-2 cities such as Trivandrum and Vijayawada have relatively lower store counts, suggesting potential opportunities for targeted expansion in these regions.
