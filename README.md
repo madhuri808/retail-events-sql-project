@@ -58,7 +58,8 @@ Aggregated store data from `dim_stores` by grouping records at the city level an
 [View SQL queries](all_queries.sql)
 
 **Output:**  
-![Store Count by City](outputs/Q1)Answer.jpeg))
+![Store Count by City](outputs/q2_store_count_by_city.png)
+
 
 **Insight:**  
 Bengaluru has the highest store presence with 10 stores, followed by Chennai (8) and Hyderabad (7), indicating a strong focus on major metro markets. In contrast, tier-2 cities such as Trivandrum and Vijayawada have relatively lower store counts, suggesting potential opportunities for targeted expansion in these regions.
@@ -75,7 +76,8 @@ Joined the `fact_events` and `dim_campaigns` tables using `campaign_id`. Revenue
 [View SQL queries](all_queries.sql)
 
 **Output:**  
-![Campaign Revenue Before and After Promotion](outputs/Q3)Answer.jpeg)
+![Campaign Revenue Before and After Promotion](outputs/q3_campaign_revenue.png)
+
 
 **Insight:**  
 Both Diwali and Sankranti campaigns delivered a substantial uplift in revenue after promotion. Diwali emerged as the stronger campaign, increasing revenue from 82.57 mln to 207.46 mln, while Sankranti grew from 58.13 mln to 140.40 mln. This indicates that festive promotions had a strong positive financial impact, with Diwali campaigns outperforming Sankranti in overall revenue generation.
