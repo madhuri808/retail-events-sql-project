@@ -40,7 +40,8 @@ Joined `fact_events` and `dim_products` tables using `product_code` and filtered
 
 
 **Output:**  
-![High Value BOGOF Products](outputs/Q1)Answer.jpeg)
+![Q1 High Value BOGOF Products](outputs/q1_answer.jpeg)
+
   
 **Insight:**  
 Only two premium products with base prices above ₹1000 are currently included in BOGOF promotions. This suggests that the BOGOF strategy is selectively applied to high-value household items, likely to drive higher sales volumes for expensive products during festive periods.
