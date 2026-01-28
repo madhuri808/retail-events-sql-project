@@ -27,3 +27,26 @@ revenue_after_promo_mln from fact_events f join dim_campaigns c
 on c.campaign_id = f.campaign_id
 group by c.campaign_name;
 
+Question 4)Produce a report that calculates the Incremental Sold Quantity (ISU%) for each category during the Diwali campaign.
+Additionally, provide rankings for the categories based on their ISU%. The report will include three key fields: category, isu%, 
+and rank order. This information will assist in assessing the 
+category-wise success and impact of the Diwali campaign on incremental sales.
+
+ Query :- with category_sales as (select p.category , c.campaign_name,
+f.`quantity_sold(before_promo)` as qty_before_promo ,
+case when f.promo_type = "BOGOF" then f.`quantity_sold(after_promo)`*2 
+else f.`quantity_sold(after_promo)` end as qty_after_promo 
+from fact_events f join dim_campaigns c on c.campaign_id = f.campaign_id
+join dim_products p on p.product_code = f.product_code
+where c.campaign_name = "Diwali"),
+isu_percentage as (
+select campaign_name, category ,
+round((sum(qty_after_promo )-sum(qty_before_promo))/sum(qty_before_promo)*100,2) as isu_percent
+from category_sales group by campaign_name, category)
+select  category , isu_percent , 
+rank () over (order by isu_percent desc ) as rank_order
+from isu_percentage 
+order by rank_order;
+
+
+
