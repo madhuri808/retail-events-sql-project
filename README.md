@@ -100,6 +100,22 @@ Filtered data for the Diwali campaign and joined `fact_events`, `dim_campaigns`,
 During the Diwali campaign, Home Appliances showed the highest incremental growth with an ISU% of 588.45%, ranking first among all categories. Home Care and Combo products also performed well with ISU% above 200%, indicating strong customer response to promotions. In comparison, Personal Care and Grocery & Staples recorded lower ISU%, suggesting a relatively smaller impact of the Diwali campaign on these categories.
 
 
+### 5. Top 5 Products by Incremental Revenue Percentage (IR%)
+
+**Business Question:**  
+Create a report featuring the top 5 products ranked by Incremental Revenue Percentage (IR%) across all campaigns. The report highlights the most successful products in terms of revenue growth after promotions, helping identify high-performing products for optimization.
+
+**SQL Logic Used:**  
+Joined `fact_events`, `dim_products`, and `dim_campaigns` tables to obtain product-level and category information across all campaigns. Revenue before promotion was calculated using base price and quantity sold before promo. Revenue after promotion was adjusted using promotion-specific discount logic (such as BOGOF, cashback, and percentage discounts) to reflect actual realized revenue. Incremental Revenue Percentage (IR%) was calculated at the product level, and products were ranked to identify the top 5 performers.
+
+**SQL Query:**  
+[View SQL queries](all_queries.sql)
+
+**Output:**  
+![Top 5 Products by IR%](outputs/q5_top_products_ir_percent.png)
+
+**Insight:**  
+The results show that products from the Home Appliances category dominate the top rankings in terms of IR%. *Atiq Waterproof Immersion Rod* ranked first with an IR% of 266.19%, followed closely by *Atiq High Glo 15W LED Bulb*. Home Care products such as *Atiq Double Bedsheet Set* and *Atiq Curtains* also demonstrated strong revenue growth, while *Atiq Farm Chakki Atta (1KG)* from Grocery & Staples ranked fifth. This indicates that electrical and home-related products benefited the most from promotional campaigns in terms of incremental revenue.
 
 
 
