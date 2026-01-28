@@ -49,4 +49,65 @@ from isu_percentage
 order by rank_order;
 
 
+Question 5)Create a report featu ring the Top 5 products, ranked by Incremental Revenue Percentage (IR%), across all campaigns.
+The report will provide essential information including product name, category, and ir%.
+This analysis helps identify the most successful products in terms of incremental revenue across our campaigns, assisting in product optimization
+
+ Query :- WITH revenue_normalized AS (
+    SELECT
+        dp.product_name,
+        dp.category,
+       -- Revenue BEFORE promotion (base price × quantity before promo)
+        fe.base_price * fe.`quantity_sold(before_promo)` AS revenue_before,
+      -- Revenue AFTER promotion (adjusted by promo type)
+        CASE
+            WHEN fe.promo_type = 'BOGOF'
+                THEN fe.base_price * 0.5 * (fe.`quantity_sold(after_promo)` * 2)
+            WHEN fe.promo_type = '500 Cashback'
+                THEN (fe.base_price - 500) * fe.`quantity_sold(after_promo)`
+            WHEN fe.promo_type = '50% OFF'
+                THEN fe.base_price * 0.5 * fe.`quantity_sold(after_promo)`
+            WHEN fe.promo_type = '33% OFF'
+                THEN fe.base_price * 0.67 * fe.`quantity_sold(after_promo)`
+            WHEN fe.promo_type = '25% OFF'
+                THEN fe.base_price * 0.75 * fe.`quantity_sold(after_promo)`
+            ELSE 0
+        END AS revenue_after
+    FROM fact_events fe
+    JOIN dim_products dp
+        ON fe.product_code = dp.product_code
+    JOIN dim_campaigns dc
+        ON fe.campaign_id = dc.campaign_id
+),
+
+product_revenue AS (
+    SELECT
+        product_name,
+        category,
+        SUM(revenue_before) AS total_revenue_before,
+        SUM(revenue_after) AS total_revenue_after
+    FROM revenue_normalized
+    GROUP BY product_name, category
+),
+
+ir_calculation AS (
+    SELECT
+        product_name,
+        category,
+        ROUND(
+            ((total_revenue_after - total_revenue_before)
+             / total_revenue_before) * 100,
+            2
+        ) AS ir_percent
+    FROM product_revenue
+)
+
+SELECT
+    product_name,
+    category,
+    ir_percent,
+    RANK() OVER (ORDER BY ir_percent DESC) AS rank_order
+FROM ir_calculation
+ORDER BY rank_order
+LIMIT 5;
 
