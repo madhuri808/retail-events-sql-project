@@ -95,9 +95,9 @@ Filtered data for the Diwali campaign and joined `fact_events`, `dim_campaigns`,
 
 **Output:**  
 ![ISU Percentage by Category – Diwali](outputs/q4_isu_by_category.png)
-
+  
 **Insight:**  
-The ISU% analysis reveals notable differences in incremental sales performance across product categories during the Diwali campaign. Categories with higher ISU% demonstrated a stronger uplift in units sold after promotion, indicating greater customer responsiveness to festive offers. This insight highlights which categories benefited most from the Diwali campaign and can guide future category-focused promotional strategies.
+During the Diwali campaign, Home Appliances showed the highest incremental growth with an ISU% of 588.45%, ranking first among all categories. Home Care and Combo products also performed well with ISU% above 200%, indicating strong customer response to promotions. In comparison, Personal Care and Grocery & Staples recorded lower ISU%, suggesting a relatively smaller impact of the Diwali campaign on these categories.
 
 
 
