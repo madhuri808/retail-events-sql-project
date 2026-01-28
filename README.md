@@ -82,6 +82,24 @@ Joined the `fact_events` and `dim_campaigns` tables using `campaign_id`. Revenue
 **Insight:**  
 Both Diwali and Sankranti campaigns delivered a substantial uplift in revenue after promotion. Diwali emerged as the stronger campaign, increasing revenue from 82.57 mln to 207.46 mln, while Sankranti grew from 58.13 mln to 140.40 mln. This indicates that festive promotions had a strong positive financial impact, with Diwali campaigns outperforming Sankranti in overall revenue generation.
 
+### 4. Incremental Sold Quantity (ISU%) by Category – Diwali Campaign
+
+**Business Question:**  
+Produce a report that calculates the Incremental Sold Quantity Percentage (ISU%) for each product category during the Diwali campaign and ranks the categories based on their ISU%. This analysis helps assess the category-wise success and impact of the Diwali promotional campaign on incremental sales.
+
+**SQL Logic Used:**  
+Filtered data for the Diwali campaign and joined `fact_events`, `dim_campaigns`, and `dim_products` tables to obtain category-level information. Post-promotion quantities were adjusted for BOGOF offers to reflect actual units sold. Category-wise quantities sold before and after promotion were aggregated, ISU% was calculated using the defined formula, and categories were ranked based on ISU%.
+
+**SQL Query:**  
+[View SQL queries](all_queries.sql)
+
+**Output:**  
+![ISU Percentage by Category – Diwali](outputs/q4_isu_by_category.png)
+
+**Insight:**  
+The ISU% analysis reveals notable differences in incremental sales performance across product categories during the Diwali campaign. Categories with higher ISU% demonstrated a stronger uplift in units sold after promotion, indicating greater customer responsiveness to festive offers. This insight highlights which categories benefited most from the Diwali campaign and can guide future category-focused promotional strategies.
+
+
 
 
 
