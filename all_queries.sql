@@ -6,7 +6,7 @@ Query :- SELECT distinct (p.product_name), f.base_price from fact_events f
 join dim_products p on f.product_code = p.product_code 
 where f.promo_type = "BOGOF" and f.base_price > 500;
 
-- - -
+----------------------------------------------------------------------------------------------------------------------------------------------
 
 Question 2)	Generate a report that provides an overview of the number of stores in each city. The results will be sorted in descending 
 order of store counts, allowing us to identify the cities with the highest store presence. 
@@ -17,6 +17,7 @@ from dim_stores
 group by city 
 order by Total_Store desc;
 
+----------------------------------------------------------------------------------------------------------------------------------------------
 Question 3) Generate a report that displays each campaign along with the total revenue generated before and after the campaign? 
 The report includes three key fields: campaign _name, total revenue(before_promotion), total revenue(after_promotion). 
 This report should help in evaluating the financial impact of our promotional campaigns. (Display the values in millions)
@@ -28,6 +29,8 @@ concat(round(sum(f.base_price * f.`quantity_sold(after_promo)`)/1000000,2), ' ml
 revenue_after_promo_mln from fact_events f join dim_campaigns c
 on c.campaign_id = f.campaign_id
 group by c.campaign_name;
+
+----------------------------------------------------------------------------------------------------------------------------------------------
 
 Question 4)Produce a report that calculates the Incremental Sold Quantity (ISU%) for each category during the Diwali campaign.
 Additionally, provide rankings for the categories based on their ISU%. The report will include three key fields: category, isu%, 
@@ -50,6 +53,7 @@ rank () over (order by isu_percent desc ) as rank_order
 from isu_percentage 
 order by rank_order;
 
+----------------------------------------------------------------------------------------------------------------------------------------------
 
 Question 5)Create a report featu ring the Top 5 products, ranked by Incremental Revenue Percentage (IR%), across all campaigns.
 The report will provide essential information including product name, category, and ir%.
@@ -112,4 +116,4 @@ SELECT
 FROM ir_calculation
 ORDER BY rank_order
 LIMIT 5;
-
+----------------------------------------------------------------------------------------------------------------------------------------------
