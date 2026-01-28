@@ -6,6 +6,8 @@ Query :- SELECT distinct (p.product_name), f.base_price from fact_events f
 join dim_products p on f.product_code = p.product_code 
 where f.promo_type = "BOGOF" and f.base_price > 500;
 
+- - -
+
 Question 2)	Generate a report that provides an overview of the number of stores in each city. The results will be sorted in descending 
 order of store counts, allowing us to identify the cities with the highest store presence. 
 The report includes two essential fields: city and store count, which will assist in optimizing our retail operations.
