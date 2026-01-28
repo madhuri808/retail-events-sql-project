@@ -16,7 +16,7 @@ Sales director Bruce Haryali wanted this immediately but the analytics manager T
   - `fact_events` – transactional sales and promotion data
   - `dim_products` – product master data
   - `dim_stores` –  stores master data
-  - `dim_campaigns` – 
+  - `dim_campaigns` – campaign master data
 - Database Tool: MySQL Workbench
 
 ## 🛠️ Tools & Technologies
