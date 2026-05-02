@@ -43,7 +43,7 @@ This project combines **SQL Analysis** and an **interactive Power BI Dashboard**
 ## 📊 Power BI Dashboard
 
 ### 🏠 Home Page
-![Home Page](outputs/home_page.png)
+![Home Page](outputs/home.png)
 
 ---
 
