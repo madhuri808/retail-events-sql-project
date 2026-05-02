@@ -48,7 +48,7 @@ This project combines **SQL Analysis** and an **interactive Power BI Dashboard**
 ---
 
 ### 🏪 Store Performance Analysis
-![Store Performance](outputs/store_performance.png)
+![Store Performance](outputs/Store Performance Analysis.png)
 
 **Key Insights:**
 - 📍 Bengaluru leads with 10 stores — highest market presence
