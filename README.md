@@ -60,7 +60,7 @@ This project combines **SQL Analysis** and an **interactive Power BI Dashboard**
 ---
 
 ### 📢 Promotion Type Analysis
-![Promotion Type](outputs/Performance Type Analysis.png)
+![Promotion Type](outputs/Performance%20Type%20Analysis.png)
 
 **Key Insights:**
 - 🥇 BOGOF & 500 Cashback promotions drove maximum Incremental Sold Units
@@ -71,7 +71,7 @@ This project combines **SQL Analysis** and an **interactive Power BI Dashboard**
 ---
 
 ### 🛍️ Category & Product Analysis
-![Category Product](outputs/Category & Product Analysis.png)
+![Category Product](outputs/Category%20%26%20Product%20Analysis.png)
 
 **Key Insights:**
 - 🌾 Grocery & Staples has highest quantity sold after promo (376K units)
